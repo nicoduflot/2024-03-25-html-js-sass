@@ -6,6 +6,12 @@
     --heading-font-family: 'Georgia Pro Black', 'Times New Roman', serif;
     font-family: var(--main-font-family);
     line-height: 1.8rem;
+    --main-nav-border-color: lightgray;
+    --main-header-bg: black;
+    --main-header-color: white;
+    --main-nav-bg: black;
+    --main-nav-link-color: white;
+    --page-link-color: blue;
 }
 
 /* déclaration générales */
@@ -21,13 +27,16 @@ body{
 }
 
 a, a:visited{
-    color:blue;
+    color:var(--page-link-color);
     text-decoration: none;
     font-weight: bold;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: var(--heading-font-family);
+    margin: unset;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 /* déclaration classes */
@@ -60,32 +69,55 @@ h1, h2, h3, h4, h5, h6{
 
 /* déclaration de structure */
 
+body > nav{
+    background-color: var(--main-nav-bg);
+}
+
 body > nav ul{
     list-style-type: none;
     padding: 0;
     line-height: 2rem;
+    margin-top: unset;
 }
 
 body > nav ul li{
-    border-top: 1px solid lightgray;
+    border-top: 1px solid var(--main-nav-border-color);
 }
 
-body > nav ul li:last-child{
-    border-bottom: 1px solid lightgray;
-}
 
-body > nav ul li a{
+
+body > nav ul li a, 
+body > nav ul li a:visited{
     display: block;
     padding-left: 1rem;
     padding-right: 1rem;
+    color: var(--main-nav-link-color);
 }
 
 body > nav ul li a:hover,
 body > nav ul li a:focus{
-    background-color: lightgray;
+    background-color: var(--main-nav-border-color);
+    color: var(--main-nav-bg);
 }
 
-body main, body > nav{
+body > header,
+body > footer{
+    background-color: var(--main-header-bg);
+    color: var(--main-header-color);
+}
+
+body > header > div,
+body > nav,
+body > main article,
+body > footer > div{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+body > header > div,
+body > footer > div,
+body > nav ul,
+body main{
     --main-font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: var(--main-font-family);
     width: 100%;
@@ -95,7 +127,10 @@ body main, body > nav{
 
 /* media queries */
 @media screen and (min-width: 576px) {
-    body main, body > nav{
+    body > header > div,
+    body > footer > div,
+    body > nav ul,
+    body main{
         width: 540px;
     }
 
@@ -107,36 +142,48 @@ body main, body > nav{
 
     body > nav ul li{
         border: unset;
-        border-left: 1px solid lightgray;
+        border-left: 1px solid var(--main-nav-border-color);
     }
     
     body > nav ul li:last-child{
         border: unset;
-        border-left: 1px solid lightgray;
-        border-right: 1px solid lightgray;
+        border-left: 1px solid var(--main-nav-border-color);
+        border-right: 1px solid var(--main-nav-border-color);
     }
 }
 
 @media screen and (min-width: 768px) {
-    body main, body > nav{
+    body > header > div,
+    body > footer > div,
+    body > nav ul,
+    body main{
         width: 720px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    body main, body > nav{
+    body > header > div,
+    body > footer > div,
+    body > nav ul,
+    body main{
         width: 960px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    body main, body > nav{
+    body > header > div,
+    body > footer > div,
+    body > nav ul,
+    body main{
         width: 1140px;
     }
 }
 
 @media screen and (min-width: 1400px) {
-    body main, body > nav{
+    body > header > div,
+    body > footer > div,
+    body > nav ul,
+    body main{
         width: 1320px;
     }
 }
