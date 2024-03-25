@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation HTML - CSS - JS - SASS</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Top Chef 2024</h1>
+            <h2><q>C'est gourmand-croquant</q></h2>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="./" title="Page d'accueil">Accueil</a>
+            </li>
+            <li>
+                <a href="./article.html" title="Lien vers l'article">Philippe Etchebest</a>
+            </li>
+            <li>
+                <a href="#" title="#">toto</a>
+            </li>
+            <li>
+                <a href="#" title="#">toto</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h2>Les images</h2>
+            </header>
+            <p>
+                De base, on utilise la balise &lt;img&gt; pour afficher des images
+            </p>
+            <img src="./images/cropped-wallhaven-fallout-4-01-3-1536x922.jpg" alt="" />
+            <p>
+                Pour améliorer l'affichage, profiter d'une légente pour l'image et de transformer image + légende en une entité pour le SEO, on utilisera la balise &lt;figure&gt;, pourla légende, elle aura comme balise enfant &lt;figcaption&gt;
+            </p>
+            <figure>
+                <img src="./images/huitieme-couleur.jpg" alt="Couverture du romane de Terry Pratchett : 'la huitième couleur'" />
+                <figcaption>
+                    Couverture du romane de Terry Pratchett : 'la huitième couleur'
+                </figcaption>
+            </figure>
+            <h3>Et l'adaptatif ?</h3>
+            <p>
+                En ayant déjà "bloqué" la largeur maximale de img à 100%, on résoud la plupart des soucis d'adaptabilité.
+                Mais avec de très grandes images, qui pèsent parfois très lourd, c'est contre productif d'afficher sur 200 pixel de large des images qui font de base 1500 px et qui pèsent 200 méga.
+            </p>
+            <p>
+                Avec la balise &lt;picture&gt; et ses balises enfants &lt;source&gt;, on est capable d'appeler une image adaptée au format d'affichage de l'appareil
+            </p>
+            <figure>
+                <picture>
+                    <source srcset="./images/synthwave-vibe-james-white-signalnoise-w1000.png" media="(min-width: 1100px)" />
+                    <source srcset="./images/synthwave-vibe-james-white-signalnoise-w800.png" media="(min-width: 900px)" />
+                    <source srcset="./images/synthwave-vibe-james-white-signalnoise-w600.png" media="(min-width: 700px)" />
+                    <source srcset="./images/synthwave-vibe-james-white-signalnoise-w400.png" media="(min-width: 500px)" />
+                    <source srcset="./images/synthwave-vibe-james-white-signalnoise-w300.png" media="(min-width: 360px)" />
+                    <img src="./images/synthwave-vibe-james-white-signalnoise-w300.png" alt="Image au style synthwave, un motard devant sa moto, au fond, un couché de soleil type des posters de films des années 80" />
+                </picture>
+                <figcaption>
+                    Image au style synthwave, un motard devant sa moto, au fond, un couché de soleil type des posters de films des années 80
+                </figcaption>
+            </figure>
+            <p>
+                L'attribut srcset est utilisable directement dans une balise img
+            </p>
+            <figure>
+                <img 
+                    srcset="./images/james-white-composite-200w.png 200w,
+                        ./images/james-white-composite-400w.png 400w,
+                        ./images/james-white-composite-800w.png 800w,
+                        ./images/james-white-composite.jpg 1200w" 
+                    sizes="(max-width: 450px) 200px, (max-width: 850px) 400px, (max-width: 1250px) 800px, 1200px" 
+                    src="./images/james-white-composite.jpg" 
+                    alt="image composite des différentes réalisation de l'artiste James White, connu pour son style synthwave" />
+                <figcaption>
+                    image composite des différentes réalisation de l'artiste James White, connu pour son style synthwave
+                </figcaption>
+            </figure>
+        </article>
+    </main>
+    <footer>
+        <div>
+            &copy; - DAWAN - 2024
+        </div>
+    </footer>
+</body>
+</html>

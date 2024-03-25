@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'akaPosse';
+    src: url('fonts/akaPosse.eot');
+    src: url('fonts/akaPosse.eot') format('embedded-opentype'),
+         url('fonts/akaPosse.woff2') format('woff2'),
+         url('fonts/akaPosse.woff') format('woff'),
+         url('fonts/akaPosse.ttf') format('truetype'),
+         url('fonts/akaPosse.svg#akaPosse') format('svg');
+}

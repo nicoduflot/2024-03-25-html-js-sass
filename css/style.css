@@ -1,9 +1,11 @@
 /* import d'autres CSS */
-
+@import url('./roboto.css');
+@import url('./bebas.css');
 /* déclaration de root */
 :root{
-    --main-font-family: Arial, Helvetica, sans-serif;
-    --heading-font-family: 'Georgia Pro Black', 'Times New Roman', serif;
+    font-size: 1.2rem;
+    --main-font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    --heading-font-family: 'Bebas', 'Georgia Pro Black', 'Times New Roman', serif;
     font-family: var(--main-font-family);
     line-height: 1.8rem;
     --main-nav-border-color: lightgray;
@@ -37,6 +39,11 @@ h1, h2, h3, h4, h5, h6{
     margin: unset;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+img{
+    max-width: 100%;
 }
 
 /* déclaration classes */
@@ -118,7 +125,6 @@ body > header > div,
 body > footer > div,
 body > nav ul,
 body main{
-    --main-font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: var(--main-font-family);
     width: 100%;
     margin-left: auto;
