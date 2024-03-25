@@ -22,10 +22,19 @@
                 <a href="./article.html" title="Lien vers l'article">Philippe Etchebest</a>
             </li>
             <li>
-                <a href="#" title="#">toto</a>
+                <a href="./js-bases.html" title="#">JS Bases</a>
             </li>
             <li>
-                <a href="#" title="#">toto</a>
+                <a href="./js-avance.html" title="#">JS Avancé</a>
+            </li>
+            <li>
+                <a href="./bootstrap.html" title="#">Bootstrap</a>
+            </li>            
+            <li>
+                <a href="./sass-base.html" title="#">Sass Bases</a>
+            </li>
+            <li>
+                <a href="./sass-avance.html" title="#">Sass Avancé</a>
             </li>
         </ul>
     </nav>
@@ -83,6 +92,38 @@
                 <figcaption>
                     image composite des différentes réalisation de l'artiste James White, connu pour son style synthwave
                 </figcaption>
+            </figure>
+            <h2>Media audio</h2>
+            <audio controls>
+                <source src="./media/audio/diablo_town.mp3" type="audio/mp3"/>
+            </audio>
+            <h2>Media vidéo</h2>
+            <video controls preload="auto">
+                <source src="./media/video/Fallout-4-Launch-Trailer.mp4" />
+            </video>
+            <h3>Plusieurs sources pour une vidéo</h3>
+            <video controls>
+                <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.webm" type="video/webm" />
+                <source src="./media/video/Big_Buck_Bunny_360_10s_1MB.mp4" type="video/mp4" />
+            </video>
+            <h3>Vidéos hébergées sur un site tiers</h3>
+            <figure class="video ratio-16-9">
+                <iframe src="https://www.youtube.com/embed/bNabDQXy0qQ?si=ykFepobKS_KGyR5l"></iframe>
+            </figure>
+            <figure class="video ratio-4-3">
+                <iframe src="https://www.dailymotion.com/embed/video/x7ep4fz"></iframe>
+            </figure>
+            <h3>Les iframes</h3>
+            <ul>
+                <li><a href="./documents/fichier.txt" target="documents">Fichier txt</a></li>
+                <li><a href="./documents/PP3.pdf" target="documents">PP3</a></li>
+                <li><a href="./documents/A4-portrait-hex-0.5-inches-paper.pdf" target="documents">Hex 0.5inch</a></li>
+                <li><a href="./media/audio/diablo_town.mp3" target="documents">fichier audio</a></li>
+            </ul>
+            <figure class="video ratio-1-1">
+                <iframe name="documents" src="./documents/A4-portrait-hex-0.5-inches-paper.pdf">
+                    Votre navigateur ne supporte pas les iframes
+                </iframe>
             </figure>
         </article>
     </main>
