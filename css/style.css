@@ -20,6 +20,12 @@ body{
     margin: 0;
 }
 
+a, a:visited{
+    color:blue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 h1, h2, h3, h4, h5, h6{
     font-family: var(--heading-font-family);
 }
@@ -54,7 +60,32 @@ h1, h2, h3, h4, h5, h6{
 
 /* déclaration de structure */
 
-body main{
+body > nav ul{
+    list-style-type: none;
+    padding: 0;
+    line-height: 2rem;
+}
+
+body > nav ul li{
+    border-top: 1px solid lightgray;
+}
+
+body > nav ul li:last-child{
+    border-bottom: 1px solid lightgray;
+}
+
+body > nav ul li a{
+    display: block;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+body > nav ul li a:hover,
+body > nav ul li a:focus{
+    background-color: lightgray;
+}
+
+body main, body > nav{
     --main-font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-family: var(--main-font-family);
     width: 100%;
@@ -64,31 +95,48 @@ body main{
 
 /* media queries */
 @media screen and (min-width: 576px) {
-    body main{
+    body main, body > nav{
         width: 540px;
+    }
+
+    body > nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    body > nav ul li{
+        border: unset;
+        border-left: 1px solid lightgray;
+    }
+    
+    body > nav ul li:last-child{
+        border: unset;
+        border-left: 1px solid lightgray;
+        border-right: 1px solid lightgray;
     }
 }
 
 @media screen and (min-width: 768px) {
-    body main{
+    body main, body > nav{
         width: 720px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    body main{
+    body main, body > nav{
         width: 960px;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    body main{
+    body main, body > nav{
         width: 1140px;
     }
 }
 
 @media screen and (min-width: 1400px) {
-    body main{
+    body main, body > nav{
         width: 1320px;
     }
 }
