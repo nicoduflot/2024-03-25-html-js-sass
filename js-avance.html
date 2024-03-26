@@ -52,36 +52,51 @@
             /*
             si on clique sur le bouton de soumission, on arrête le comportement par défaut du bouton submit pour pouvoir vérifier les champs obligatoires et envoyer le formulaire si les champs sont bien remplis
             */
+
+            function error(element, isError){
+                let idTarget = element.getAttribute('aria-describedby');
+                let divTarget = document.getElementById(idTarget);
+                if(isError){
+                    divTarget.classList.remove('hidden');
+                    element.classList.add('error');
+                }else{
+                    divTarget.classList.add('hidden');
+                    element.classList.remove('error');
+                }
+            }
+
             submitButton.addEventListener('click', function(event){
-                /* comme on a réccupéré l'événement clic sur le bouton, on peut arrêter le comportement par défaut du bouton de type submitt du formulaire qui est d'envoyer le formulaire */
+                
+                /* 
+                comme on a réccupéré l'événement clic sur le bouton, 
+                on peut arrêter le comportement par défaut du bouton de 
+                type submitt du formulaire qui est d'envoyer le formulaire 
+                */
                 event.preventDefault();
                 /* on peut maintenant contrôler les champs obligatoires */
                 const nom = document.getElementById('nom');
                 const email = document.getElementById('email');
-                console.log(nom.value, email.value);
                 let formOk = true;
                 formOk = (nom.value === '' || email.value === '')? false : true;
-                
+
                 if(formOk){
                     form.submit();
                 }else{
-
-                    /* console.log( nom.getAttribute('aria-describedby') ); */
-                    
-                    let idTarget = nom.getAttribute('aria-describedby');
-                    let divTarget = document.getElementById(idTarget);
-                    (nom.value === '')? divTarget.classList.remove('hidden') : divTarget.classList.add('hidden');
-
-                    idTarget = email.getAttribute('aria-describedby');
-                    divTarget = document.getElementById(idTarget);
-                    (email.value === '')? divTarget.classList.remove('hidden') : divTarget.classList.add('hidden');
-                    
-                    /*
-                    (nom.value === '')? document.getElementById( nom.getAttribute('aria-describedby') ).classList.remove('hidden') : null;
-                    (email.value === '')? document.getElementById( email.getAttribute('aria-describedby') ).classList.remove('hidden') : null;
-                    */
+                    (nom.value === '')? error(nom, true) : error(nom, false) ;
+                    (email.value === '')? error(email, true) : error(email, false) ;
                 }
             });
+
+            const bodyHeader = document.querySelector('body > header');
+            bodyHeader.addEventListener('mouseover', function(){
+                console.log('coucou');
+            });
+            
+            bodyHeader.addEventListener('click', function(){
+                console.log('Hello');
+            });
+
+            
 
         });
     </script>

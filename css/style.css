@@ -89,6 +89,10 @@ figure.video{
     display: none;
 }
 
+.error{
+    border: 2px solid red;
+}
+
 /* déclaration classes */
 
 .carre200content{
