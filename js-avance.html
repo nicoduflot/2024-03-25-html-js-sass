@@ -9,7 +9,7 @@
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             const allTd = document.querySelectorAll('table#jv td');
-            console.log(allTd);
+            /*console.log(allTd);*/
             allTd.forEach(function(td){
                 td.addEventListener('click', function(event){
                     /*console.log(event);*/
@@ -22,7 +22,7 @@
                     }else{
                         tr = event.target.parentNode;
                     }
-                    console.log(tr.children);
+                    /*console.log(tr.children);*/
                     let ul = document.createElement('ul');
                     for(let cellule of tr.children){
                         let li = document.createElement('li');
@@ -30,11 +30,35 @@
                         li.appendChild(content);
                         ul.appendChild(li);
                     }
-                    console.log(ul);
-                    
-                    document.querySelector('#affichage').appendChild(ul);
+                    /*console.log(ul);*/
+                    ul.addEventListener('click', function(){
+                        this.remove();
+                    });
+                    let div = document.querySelector('#affichage');
+                    if(div.childNodes){
+                        let childs = div.childNodes;
+                        while(childs.length > 0){
+                            div.removeChild(div.lastChild);
+                        }
+                    }
+                    div.appendChild(ul);
                 });
             });
+
+            /* contrôle de formulaire */
+            const form = document.querySelector('#contact');
+            const submitButton = document.querySelector('#contact button[type="submit"]');
+
+            /*
+            si on clique sur le bouton de soumission, on arrête le comportement par défaut du bouton submit pour pouvoir vérifier les champs obligatoires et envoyer le formulaire si les champs sont bien remplis
+            */
+            submitButton.addEventListener('click', function(event){
+                /* comme on a réccupéré l'événement clic sur le bouton, on peut arrêter le comportement par défaut du bouton de type submitt du formulaire qui est d'envoyer le formulaire */
+                event.preventDefault();
+                /* on peut maintenant contrôler les champs obligatoires */
+                
+            });
+
         });
     </script>
 </head>
@@ -99,8 +123,8 @@
                 <tbody>
                     <tr>
                         <td><a href="/wiki/1986_en_jeu_vid%C3%A9o" title="1986 en jeu vidéo">1986</a></td>
-                        <td><i><a href="/w/index.php?title=Gridiron!&amp;action=edit&amp;redlink=1" class="new"
-                                    title="Gridiron! (page inexistante)">Gridiron!</a></i></td>
+                        <td><a href="/w/index.php?title=Gridiron!&amp;action=edit&amp;redlink=1" class="new"
+                                    title="Gridiron! (page inexistante)">Gridiron!</a></td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/Amiga" title="Amiga">Amiga</a>, <a href="/wiki/Atari_ST"
@@ -110,7 +134,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1988_en_jeu_vid%C3%A9o" title="1988 en jeu vidéo">1988</a></td>
-                        <td><i>Wayne Gretzky Hockey</i></td>
+                        <td>Wayne Gretzky Hockey</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/Amiga" title="Amiga">Amiga</a>, <a href="/wiki/Atari_ST"
@@ -122,7 +146,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1990_en_jeu_vid%C3%A9o" title="1990 en jeu vidéo">1990</a></td>
-                        <td><i>Wayne Gretzky Hockey 2</i></td>
+                        <td>Wayne Gretzky Hockey 2</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a>, <a href="/wiki/Amiga" title="Amiga">Amiga</a></td>
@@ -131,8 +155,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1990_en_jeu_vid%C3%A9o" title="1990 en jeu vidéo">1990</a></td>
-                        <td><i><a href="/wiki/The_Terminator_(jeu_vid%C3%A9o,_1990)"
-                                    title="The Terminator (jeu vidéo, 1990)">The Terminator</a></i></td>
+                        <td><a href="/wiki/The_Terminator_(jeu_vid%C3%A9o,_1990)"
+                                    title="The Terminator (jeu vidéo, 1990)">The Terminator</a></td>
                         <td><a href="/wiki/Jeu_de_plates-formes" title="Jeu de plates-formes">Plates-formes</a>,
                             <a href="/wiki/Jeu_d%27aventure" title="Jeu d'aventure">aventure</a>
                         </td>
@@ -142,7 +166,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
-                        <td><i>Wayne Gretzky Hockey 3</i></td>
+                        <td>Wayne Gretzky Hockey 3</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
@@ -151,8 +175,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
-                        <td><i><a href="/wiki/Home_Alone_(jeu_vid%C3%A9o)" title="Home Alone (jeu vidéo)">Home
-                                    Alone</a></i></td>
+                        <td><a href="/wiki/Home_Alone_(jeu_vid%C3%A9o)" title="Home Alone (jeu vidéo)">Home
+                                    Alone</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
                         <td><a href="/wiki/Nintendo_Entertainment_System" title="Nintendo Entertainment System">NES</a>
                         </td>
@@ -161,8 +185,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
-                        <td><i><a href="/wiki/Where%27s_Waldo%3F" title="Where's Waldo?">Where's
-                                    Waldo?</a></i>
+                        <td><a href="/wiki/Where%27s_Waldo%3F" title="Where's Waldo?">Where's
+                                    Waldo?</a>
                         </td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_r%C3%A9flexion"
                                 title="Jeu vidéo de réflexion">Réflexion</a></td>
@@ -173,9 +197,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1992_en_jeu_vid%C3%A9o" title="1992 en jeu vidéo">1992</a></td>
-                        <td><i><a href="/wiki/The_Terminator_2029" title="The Terminator 2029">The
+                        <td><a href="/wiki/The_Terminator_2029" title="The Terminator 2029">The
                                     Terminator
-                                    2029</a></i></td>
+                                    2029</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a>, <a
                                 href="/wiki/Jeu_de_strat%C3%A9gie" title="Jeu de stratégie">stratégie</a>
                         </td>
@@ -185,8 +209,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1993_en_jeu_vid%C3%A9o" title="1993 en jeu vidéo">1993</a></td>
-                        <td><i><a href="/wiki/The_Terminator:_Rampage" title="The Terminator: Rampage">The
-                                    Terminator: Rampage</a></i></td>
+                        <td><a href="/wiki/The_Terminator:_Rampage" title="The Terminator: Rampage">The
+                                    Terminator: Rampage</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
                         <td>Bethesda Softworks
@@ -194,10 +218,10 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1993_en_jeu_vid%C3%A9o" title="1993 en jeu vidéo">1993</a></td>
-                        <td><i><a href="/wiki/The_Terminator_2029:_Operation_Scour" class="mw-redirect"
+                        <td><a href="/wiki/The_Terminator_2029:_Operation_Scour" class="mw-redirect"
                                     title="The Terminator 2029: Operation Scour">The Terminator 2029:
                                     Operation
-                                    Scour</a></i></td>
+                                    Scour</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a>, <a
                                 href="/wiki/Jeu_de_strat%C3%A9gie" title="Jeu de stratégie">stratégie</a>
                         </td>
@@ -207,8 +231,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1994_en_jeu_vid%C3%A9o" title="1994 en jeu vidéo">1994</a></td>
-                        <td><i><a href="/wiki/The_Elder_Scrolls:_Arena" title="The Elder Scrolls: Arena">The
-                                    Elder Scrolls: Arena</a></i></td>
+                        <td><a href="/wiki/The_Elder_Scrolls:_Arena" title="The Elder Scrolls: Arena">The
+                                    Elder Scrolls: Arena</a></td>
                         <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
                         <td>Bethesda Softworks
@@ -216,8 +240,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1994_en_jeu_vid%C3%A9o" title="1994 en jeu vidéo">1994</a></td>
-                        <td><i><a href="/w/index.php?title=Delta_V&amp;action=edit&amp;redlink=1" class="new"
-                                    title="Delta V (page inexistante)">Delta V</a></i></td>
+                        <td><a href="/w/index.php?title=Delta_V&amp;action=edit&amp;redlink=1" class="new"
+                                    title="Delta V (page inexistante)">Delta V</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
                         <td>Bethesda Softworks
@@ -225,9 +249,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1995_en_jeu_vid%C3%A9o" title="1995 en jeu vidéo">1995</a></td>
-                        <td><i><a href="/wiki/The_Terminator:_Future_Shock" title="The Terminator: Future Shock">The
+                        <td><a href="/wiki/The_Terminator:_Future_Shock" title="The Terminator: Future Shock">The
                                     Terminator: Future
-                                    Shock</a></i>
+                                    Shock</a>
                         </td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
@@ -236,8 +260,8 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1996_en_jeu_vid%C3%A9o" title="1996 en jeu vidéo">1996</a></td>
-                        <td><i><a href="/wiki/The_Terminator:_SkyNET" title="The Terminator: SkyNET">The
-                                    Terminator: SkyNET</a></i></td>
+                        <td><a href="/wiki/The_Terminator:_SkyNET" title="The Terminator: SkyNET">The
+                                    Terminator: SkyNET</a></td>
                         <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
                         <td>Bethesda Softworks
@@ -245,9 +269,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1996_en_jeu_vid%C3%A9o" title="1996 en jeu vidéo">1996</a></td>
-                        <td><i><a href="/wiki/The_Elder_Scrolls_II:_Daggerfall"
+                        <td><a href="/wiki/The_Elder_Scrolls_II:_Daggerfall"
                                     title="The Elder Scrolls II: Daggerfall">The Elder Scrolls II:
-                                    Daggerfall</a></i></td>
+                                    Daggerfall</a></td>
                         <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
                         <td>Bethesda Softworks
@@ -255,9 +279,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
-                        <td><i><a href="/wiki/An_Elder_Scrolls_Legend:_Battlespire"
+                        <td><a href="/wiki/An_Elder_Scrolls_Legend:_Battlespire"
                                     title="An Elder Scrolls Legend: Battlespire">An Elder Scrolls Legend:
-                                    Battlespire</a></i></td>
+                                    Battlespire</a></td>
                         <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a>, <a href="/wiki/Microsoft_Windows"
                                 title="Microsoft Windows">Windows</a></td>
@@ -266,7 +290,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
-                        <td><i>PBA Tour Bowling</i></td>
+                        <td>PBA Tour Bowling</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
@@ -275,9 +299,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
-                        <td><i><a href="/w/index.php?title=XCar:_Experimental_Racing&amp;action=edit&amp;redlink=1"
+                        <td><a href="/w/index.php?title=XCar:_Experimental_Racing&amp;action=edit&amp;redlink=1"
                                     class="new" title="XCar: Experimental Racing (page inexistante)">XCar:
-                                    Experimental Racing</a></i></td>
+                                    Experimental Racing</a></td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
                         </td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
@@ -286,9 +310,9 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1998_en_jeu_vid%C3%A9o" title="1998 en jeu vidéo">1998</a></td>
-                        <td><i><a href="/w/index.php?title=Burnout:_Championship_Drag_Racing&amp;action=edit&amp;redlink=1"
+                        <td><a href="/w/index.php?title=Burnout:_Championship_Drag_Racing&amp;action=edit&amp;redlink=1"
                                     class="new" title="Burnout: Championship Drag Racing (page inexistante)">Burnout:
-                                    Championship Drag Racing</a></i></td>
+                                    Championship Drag Racing</a></td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
                         </td>
                         <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
@@ -297,10 +321,10 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1998_en_jeu_vid%C3%A9o" title="1998 en jeu vidéo">1998</a></td>
-                        <td><i><a href="/wiki/The_Elder_Scrolls_Adventures:_Redguard"
+                        <td><a href="/wiki/The_Elder_Scrolls_Adventures:_Redguard"
                                     title="The Elder Scrolls Adventures: Redguard">The Elder Scrolls
                                     Adventures:
-                                    Redguard</a></i></td>
+                                    Redguard</a></td>
                         <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
                         <td>Bethesda Softworks
@@ -308,7 +332,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1999_en_jeu_vid%C3%A9o" title="1999 en jeu vidéo">1999</a></td>
-                        <td><i>NIRA Intense Import Drag Racing</i></td>
+                        <td>NIRA Intense Import Drag Racing</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
                         </td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
@@ -317,7 +341,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/1999_en_jeu_vid%C3%A9o" title="1999 en jeu vidéo">1999</a></td>
-                        <td><i>Skip Barber Racing</i></td>
+                        <td>Skip Barber Racing</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
                         </td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
@@ -326,7 +350,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/2000_en_jeu_vid%C3%A9o" title="2000 en jeu vidéo">2000</a></td>
-                        <td><i>IHRA Drag Racing</i></td>
+                        <td>IHRA Drag Racing</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
                         </td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a>, <a
@@ -336,7 +360,7 @@
                     </tr>
                     <tr>
                         <td><a href="/wiki/2000_en_jeu_vid%C3%A9o" title="2000 en jeu vidéo">2000</a></td>
-                        <td><i>PBA Tour Bowling 2</i></td>
+                        <td>PBA Tour Bowling 2</td>
                         <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
                         </td>
                         <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
@@ -345,6 +369,28 @@
                     </tr>
                 </tbody>
             </table>
+            <h3>Éléments dynamiques</h3>
+            <form id="contact">
+                <p>
+                    <label for="nom">Nom *</label> 
+                    <input type="text" name="nom" id="nom" placeholder="votre nom ici" aria-describedby="nomAlert" />
+                </p>
+                <div id="nomAlert" class="hidden">
+                    Ce champ est obligatoire
+                </div>
+                <p>
+                    <label for="email">Email *</label> 
+                    <input type="text" name="email" id="email" placeholder="votre email ici" aria-describedby="emailAlert" />
+                </p>
+                <div id="emailAlert" class="hidden">
+                    Ce champ est obligatoire
+                </div>
+                <p>
+                    <button type="submit">
+                        Envoyer
+                    </button>
+                </p>
+            </form>
         </article>
     </main>
     <footer>

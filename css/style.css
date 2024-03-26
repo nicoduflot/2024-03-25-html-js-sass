@@ -85,6 +85,10 @@ figure.video{
     padding-bottom: 100%;
 }
 
+.hidden{
+    display: none;
+}
+
 /* déclaration classes */
 
 .carre200content{
