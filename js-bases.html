@@ -11,19 +11,227 @@
         function testClique(){
             console.log('Tu as cliqué !');
         }
-
+        
+        console.log(document.querySelector('body'));
         /*  */
         window.addEventListener('DOMContentLoaded', function(){
             console.log('la page est chargé');
 
+            /* on n'utilise plus var pour créer des variables. */
+            /* si la variable ne change pas (un objet ou une constante) */
             const body = document.querySelector('body');
 
             console.log(body);
             console.log(body.children);
-
+            
+            /* si la variable va changer */
+            let cpt = 0;
+ 
+            cpt = cpt + 1; //cpt = 1
+            cpt++; // cpt = 2
+            console.log(cpt);
+            console.log(cpt++); // affiche 2 puis ajoute 1
+            console.log(cpt); // cpt = 3
+            console.log(++cpt); // ajoute 1 puis affiche 4
+            
+            /*
             document.addEventListener('click', function(event){
+                console.log(event);
+                console.log(event.target);
                 console.log(event.target.parentNode);
             });
+            */
+
+            /* les variables JS ne sont pas typés nativement */
+
+            let toto;
+            console.log(toto);
+            console.log(typeof toto);
+            toto = 'tata';
+            console.log(typeof toto);
+            toto = 12;
+            console.log(typeof toto);
+
+            /* il existe deux familles de type de variables */
+
+            /*
+            Types primitifs
+            number
+            boolean (true / false)
+
+            types références
+            String                
+            Array             
+            Object            
+            JSON            =>  JavaScript Object Notation
+            */
+
+            /* les objets en JS */
+            /* Objet litéral */
+
+            const objLit = {
+                nom : 'Duflot',
+                prenom : 'Nicolas',
+                presentation : function(){
+                    console.log(`Je m'appele ${this.prenom} ${this.nom} et j'ai ${2024-1980} ans`);
+                }
+            };
+
+            console.log(objLit);
+            console.log(objLit.nom);
+            console.log(objLit.presentation);
+            console.log(objLit.presentation());
+
+            /* objets créés avec des classes */
+            const monMap = new Map();
+            monMap.set('nom', 'Duflot').set('prenom', 'Nicolas').set('age', 0);
+            console.log(monMap);
+            monMap.set('age', 44);
+            console.log(monMap);
+
+            const monObjJson = {
+                'nom':'nicolas'
+            };
+
+            console.log(monObjJson);
+            console.log(monObjJson.nom);
+
+            /* les tableaux */
+
+            let tab = ['toto', 'tata', 12, 12.3, true];
+            console.log(tab);
+            console.log(tab.length);
+            /*
+            tab[tab.length] = 'titi';
+            console.log(tab);
+            console.log(tab.length);
+            
+            tab[22] = 'tutu';
+            console.log(tab);
+            console.log(tab.length);
+            */
+           
+            tab.push('tutu');
+            console.log(tab);
+            console.log(tab.length);
+            /* extrait la dernière entrée du tableau */
+            const lastEntry = tab.pop();
+            console.log(tab);
+            console.log(tab.length);
+            console.log(lastEntry);
+            /* extrait la première entrée du tableau */
+            const firstEntry = tab.shift();
+            console.log(tab);
+            console.log(tab.length);
+            console.log(firstEntry);
+            tab.push('truc', 'machin', 56, 987, false);
+            console.log(tab);
+            /* extraire, ajouter remplacer */
+            const tabEntry = tab.splice(3, 3, 'popo', 'papa');
+            console.log(tab);
+            console.log(tabEntry);
+            /* entre l'index 3 et l'index 4 actuel, j'ajoute tout ce qui a été extrait précédemment */
+            tab.splice(4, 0, lastEntry, firstEntry, tabEntry[0], tabEntry[1], tabEntry[2]);
+            console.log(tab);
+
+            /* copier un tableau */
+            /*
+            let copieTab = tab; // ça ne crée pas une copie, mais une nouvelle référence à la variable, une sorte d'alias
+            console.log('--------- copie de tableau --------------');
+            console.log(tab);
+            console.log(copieTab);
+            copieTab.pop();
+            console.log(tab);
+            console.log(copieTab);
+            */
+            console.log('--------- copie de tableau --------------');
+            let copieTab = tab.slice();
+            console.log(tab);
+            console.log(copieTab);
+            copieTab.pop();
+            console.log(tab);
+            console.log(copieTab);
+            
+            /* parcourir un tableau */
+            console.log('--------- boucle for --------------');
+            for(let i = 0; i < tab.length; i = i + 1){
+                console.log(tab[i]);
+            }
+            
+            /* for in */
+            console.log('--------- boucle for in --------------');
+            /* on boucle sur les index du tableau */
+            for(let index in tab){
+                console.log(tab[index]);
+            }
+            /* on boucle sur les valeurs du tableau */
+            for(let value of tab){
+                console.log(value);
+            }
+            /* .map : le forEach pour les tableau */
+            console.log('--------- méthode map --------------');
+            tab.map(function(valeur, index, tabMap){
+                console.log(valeur, index, tabMap);
+                if(!valeur){
+                    tabMap[index] = true;
+                }
+            });
+            
+            console.log(tab);
+            
+            /* forEach : pour les objets itérables */
+            console.log('--------- méthode foreach pour les objets itérables --------------');
+            monMap.forEach(function(valeur, index, tabFE){
+                console.log(valeur, index, tabFE);
+            });
+
+            const parfum = 'Vanille';
+
+            switch(parfum){
+                case 'Chocolat': 
+                    console.log('choco');
+                    break;
+                case 'Vanille' : 
+                    console.log('van');
+                    break;
+                default: 
+                    console.log('connais pas');
+            }
+
+            switch(true){
+                case (cpt < 2) :
+                    console.log('patit cpt');
+                break;
+                case (cpt >= 2):
+                    console.log('gros cpt');
+                break;
+            }
+
+            /* fonctions particulières */
+
+            /* fonction de rappel ou callback function ou fonction anonyme */
+            let maFonctionAnonyme = function(){
+                console.log('coucou');
+            };
+
+            maFonctionAnonyme();
+
+            /* 
+            fonction auto exécutée 
+            (
+                fonction anonyme
+            )(
+                paramètre(s) de la fonction anonyme s'il en existe
+            );
+            */
+
+            (
+                function(nom, prenom){
+                    console.log(`${prenom} ${nom}`);
+                }
+            )(
+                'Duflot', 'Nicolas'
+            );
 
         });
 
@@ -31,7 +239,7 @@
     </script>
 </head>
 <body>
-    <header>
+    <header aria-description="test">
         <div>
             <h1>Top Chef 2024</h1>
             <h2><q>C'est gourmand-croquant</q></h2>
