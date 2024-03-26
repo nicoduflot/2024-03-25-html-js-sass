@@ -1,0 +1,18 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$primary-color: #333;
+$main-font-family: 'Roboto', Arial, Helvetica, sans-serif;
+$main-nav-border-color: lightgray;
+$main-header-bg: black;
+$main-header-color: white;
+$main-nav-bg: black;
+$main-nav-link-color: white;
+$page-link-color: blue;
+
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "a4-portrait": calc(29.7 / 21 * 100%),
+  "a4-landscape": calc(21 / 29.7 * 100%)
+) !default;

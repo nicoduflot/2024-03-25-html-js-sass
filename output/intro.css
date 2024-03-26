@@ -1,0 +1,90 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 1.2rem;
+  --main-font-family: Roboto, Arial, Helvetica, sans-serif;
+  --heading-font-family: "Bebas", "Georgia Pro Black", "Times New Roman", serif;
+  font-family: var(--main-font-family);
+  line-height: 1.8rem;
+  --main-nav-border-color: lightgray;
+  --main-header-bg: black;
+  --main-header-color: white;
+  --main-nav-bg: black;
+  --main-nav-link-color: white;
+  --page-link-color: blue;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.ratio-1x1 {
+  --aspect-ratio: 100%;
+}
+
+.ratio-4x3 {
+  --aspect-ratio: 75%;
+}
+
+.ratio-16x9 {
+  --aspect-ratio: 56.25%;
+}
+
+.ratio-21x9 {
+  --aspect-ratio: 42.8571428571%;
+}
+
+.ratio-a4-portrait {
+  --aspect-ratio: 141.4285714286%;
+}
+
+.ratio-a4-landscape {
+  --aspect-ratio: 70.7070707071%;
+}
+
+figure.video {
+  border: 1px solid black;
+  margin: unset;
+  position: relative;
+  width: 100%;
+  height: 0;
+  overflow: auto;
+  padding-bottom: var(--aspect-ratio);
+}
+
+.video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+}
+body > nav {
+  background-color: #333;
+}
+body > nav ul {
+  list-style-type: none;
+  padding: 0;
+  line-height: 2rem;
+  margin-top: unset;
+}
+body > nav ul li {
+  border-top: 1px solid var(--main-nav-border-color);
+}
+body > nav ul li a {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--main-nav-link-color);
+}
+body > nav ul li a:hover, body > nav ul li a:focus {
+  background-color: var(--main-nav-border-color);
+  color: var(--main-nav-bg);
+}
+
+/*# sourceMappingURL=intro.css.map */

@@ -1,0 +1,78 @@
+@use "sass:list";
+@use "sass:map";
+
+@import "variables";
+
+:root{
+    font-family: $font-stack;
+    color: $primary-color;
+    font-size: 1.2rem;
+    --main-font-family: #{$main-font-family};
+    --heading-font-family: 'Bebas', 'Georgia Pro Black', 'Times New Roman', serif;
+    font-family: var(--main-font-family);
+    line-height: 1.8rem;
+    --main-nav-border-color: #{$main-nav-border-color};
+    --main-header-bg: #{$main-header-bg};
+    --main-header-color: #{$main-header-color};
+    --main-nav-bg: #{$main-nav-bg};
+    --main-nav-link-color: #{$main-nav-link-color};
+    --page-link-color: #{$page-link-color};
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+@each $key, $ratio in $aspect-ratios {
+    .ratio-#{$key} {
+      --aspect-ratio: #{$ratio};
+    }
+  }
+
+  figure.video{
+    border: 1px solid black;
+    margin: unset;
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: auto;
+    padding-bottom: var(--aspect-ratio);
+}
+
+.video iframe{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+
+body{
+    margin: 0;
+    > {
+        font-size: 1.2rem;
+        nav{
+            background-color: $primary-color;
+            ul{
+                list-style-type: none;
+                padding: 0;
+                line-height: 2rem;
+                margin-top: unset;
+                li{
+                    border-top: 1px solid var(--main-nav-border-color);
+                    a{
+                        display: block;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        color: var(--main-nav-link-color);
+                        &:hover, &:focus{
+                            background-color: var(--main-nav-border-color);
+                            color: var(--main-nav-bg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 
