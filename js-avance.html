@@ -56,7 +56,31 @@
                 /* comme on a réccupéré l'événement clic sur le bouton, on peut arrêter le comportement par défaut du bouton de type submitt du formulaire qui est d'envoyer le formulaire */
                 event.preventDefault();
                 /* on peut maintenant contrôler les champs obligatoires */
+                const nom = document.getElementById('nom');
+                const email = document.getElementById('email');
+                console.log(nom.value, email.value);
+                let formOk = true;
+                formOk = (nom.value === '' || email.value === '')? false : true;
                 
+                if(formOk){
+                    form.submit();
+                }else{
+
+                    /* console.log( nom.getAttribute('aria-describedby') ); */
+                    
+                    let idTarget = nom.getAttribute('aria-describedby');
+                    let divTarget = document.getElementById(idTarget);
+                    (nom.value === '')? divTarget.classList.remove('hidden') : divTarget.classList.add('hidden');
+
+                    idTarget = email.getAttribute('aria-describedby');
+                    divTarget = document.getElementById(idTarget);
+                    (email.value === '')? divTarget.classList.remove('hidden') : divTarget.classList.add('hidden');
+                    
+                    /*
+                    (nom.value === '')? document.getElementById( nom.getAttribute('aria-describedby') ).classList.remove('hidden') : null;
+                    (email.value === '')? document.getElementById( email.getAttribute('aria-describedby') ).classList.remove('hidden') : null;
+                    */
+                }
             });
 
         });
