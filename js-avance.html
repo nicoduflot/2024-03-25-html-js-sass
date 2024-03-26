@@ -8,7 +8,33 @@
     <link rel="stylesheet" href="./css/style.css" />
     <script>
         window.addEventListener('DOMContentLoaded', function () {
-
+            const allTd = document.querySelectorAll('table#jv td');
+            console.log(allTd);
+            allTd.forEach(function(td){
+                td.addEventListener('click', function(event){
+                    /*console.log(event);*/
+                    /* pour arrêter le comportement par défaut d'un événement */
+                    event.preventDefault();
+                    /* console.log(event.target.nodeName); */
+                    let tr = null;
+                    if(event.target.nodeName === 'A'){
+                        tr = event.target.parentNode.parentNode;
+                    }else{
+                        tr = event.target.parentNode;
+                    }
+                    console.log(tr.children);
+                    let ul = document.createElement('ul');
+                    for(let cellule of tr.children){
+                        let li = document.createElement('li');
+                        let content = document.createTextNode(cellule.innerText);
+                        li.appendChild(content);
+                        ul.appendChild(li);
+                    }
+                    console.log(ul);
+                    
+                    document.querySelector('#affichage').appendChild(ul);
+                });
+            });
         });
     </script>
 </head>
@@ -52,7 +78,7 @@
             </header>
             <h3>Gestion des événements</h3>
             <div id="affichage">
-                
+
             </div>
             <table id="jv">
                 <thead>
