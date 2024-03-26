@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation HTML - CSS - JS - SASS</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+
+        });
+    </script>
+</head>
+
+<body>
+    <header aria-description="test">
+        <div>
+            <h1>Top Chef 2024</h1>
+            <h2><q>C'est gourmand-croquant</q></h2>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li>
+                <a href="./" title="Page d'accueil">Accueil</a>
+            </li>
+            <li>
+                <a href="./article.html" title="Lien vers l'article">Philippe Etchebest</a>
+            </li>
+            <li>
+                <a href="./js-bases.html" title="#">JS Bases</a>
+            </li>
+            <li>
+                <a href="./js-avance.html" title="#">JS Avancé</a>
+            </li>
+            <li>
+                <a href="./bootstrap.html" title="#">Bootstrap</a>
+            </li>
+            <li>
+                <a href="./sass-base.html" title="#">Sass Bases</a>
+            </li>
+            <li>
+                <a href="./sass-avance.html" title="#">Sass Avancé</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h2>Le Javascript</h2>
+            </header>
+            <h3>Gestion des événements</h3>
+
+            <table id="jv">
+                <thead>
+                    <tr>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="Tri croissant">
+                            Année</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="Tri croissant">
+                            Titre</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="Tri croissant">
+                            Genre</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="Tri croissant">
+                            Plates-formes</th>
+                        <th class="headerSort" tabindex="0" role="columnheader button" title="Tri croissant">
+                            Distributeur
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/wiki/1986_en_jeu_vid%C3%A9o" title="1986 en jeu vidéo">1986</a></td>
+                        <td><i><a href="/w/index.php?title=Gridiron!&amp;action=edit&amp;redlink=1" class="new"
+                                    title="Gridiron! (page inexistante)">Gridiron!</a></i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/Amiga" title="Amiga">Amiga</a>, <a href="/wiki/Atari_ST"
+                                title="Atari ST">Atari ST</a>, <a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1988_en_jeu_vid%C3%A9o" title="1988 en jeu vidéo">1988</a></td>
+                        <td><i>Wayne Gretzky Hockey</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/Amiga" title="Amiga">Amiga</a>, <a href="/wiki/Atari_ST"
+                                title="Atari ST">Atari ST</a>, <a href="/wiki/DOS" title="DOS">DOS</a>, <a
+                                href="/wiki/Nintendo_Entertainment_System" title="Nintendo Entertainment System">NES</a>
+                        </td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1990_en_jeu_vid%C3%A9o" title="1990 en jeu vidéo">1990</a></td>
+                        <td><i>Wayne Gretzky Hockey 2</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a>, <a href="/wiki/Amiga" title="Amiga">Amiga</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1990_en_jeu_vid%C3%A9o" title="1990 en jeu vidéo">1990</a></td>
+                        <td><i><a href="/wiki/The_Terminator_(jeu_vid%C3%A9o,_1990)"
+                                    title="The Terminator (jeu vidéo, 1990)">The Terminator</a></i></td>
+                        <td><a href="/wiki/Jeu_de_plates-formes" title="Jeu de plates-formes">Plates-formes</a>,
+                            <a href="/wiki/Jeu_d%27aventure" title="Jeu d'aventure">aventure</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
+                        <td><i>Wayne Gretzky Hockey 3</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
+                        <td><i><a href="/wiki/Home_Alone_(jeu_vid%C3%A9o)" title="Home Alone (jeu vidéo)">Home
+                                    Alone</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
+                        <td><a href="/wiki/Nintendo_Entertainment_System" title="Nintendo Entertainment System">NES</a>
+                        </td>
+                        <td><a href="/wiki/THQ" title="THQ">THQ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1991_en_jeu_vid%C3%A9o" title="1991 en jeu vidéo">1991</a></td>
+                        <td><i><a href="/wiki/Where%27s_Waldo%3F" title="Where's Waldo?">Where's
+                                    Waldo?</a></i>
+                        </td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_r%C3%A9flexion"
+                                title="Jeu vidéo de réflexion">Réflexion</a></td>
+                        <td><a href="/wiki/Nintendo_Entertainment_System" title="Nintendo Entertainment System">NES</a>
+                        </td>
+                        <td><a href="/wiki/THQ" title="THQ">THQ</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1992_en_jeu_vid%C3%A9o" title="1992 en jeu vidéo">1992</a></td>
+                        <td><i><a href="/wiki/The_Terminator_2029" title="The Terminator 2029">The
+                                    Terminator
+                                    2029</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a>, <a
+                                href="/wiki/Jeu_de_strat%C3%A9gie" title="Jeu de stratégie">stratégie</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1993_en_jeu_vid%C3%A9o" title="1993 en jeu vidéo">1993</a></td>
+                        <td><i><a href="/wiki/The_Terminator:_Rampage" title="The Terminator: Rampage">The
+                                    Terminator: Rampage</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1993_en_jeu_vid%C3%A9o" title="1993 en jeu vidéo">1993</a></td>
+                        <td><i><a href="/wiki/The_Terminator_2029:_Operation_Scour" class="mw-redirect"
+                                    title="The Terminator 2029: Operation Scour">The Terminator 2029:
+                                    Operation
+                                    Scour</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a>, <a
+                                href="/wiki/Jeu_de_strat%C3%A9gie" title="Jeu de stratégie">stratégie</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1994_en_jeu_vid%C3%A9o" title="1994 en jeu vidéo">1994</a></td>
+                        <td><i><a href="/wiki/The_Elder_Scrolls:_Arena" title="The Elder Scrolls: Arena">The
+                                    Elder Scrolls: Arena</a></i></td>
+                        <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1994_en_jeu_vid%C3%A9o" title="1994 en jeu vidéo">1994</a></td>
+                        <td><i><a href="/w/index.php?title=Delta_V&amp;action=edit&amp;redlink=1" class="new"
+                                    title="Delta V (page inexistante)">Delta V</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1995_en_jeu_vid%C3%A9o" title="1995 en jeu vidéo">1995</a></td>
+                        <td><i><a href="/wiki/The_Terminator:_Future_Shock" title="The Terminator: Future Shock">The
+                                    Terminator: Future
+                                    Shock</a></i>
+                        </td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1996_en_jeu_vid%C3%A9o" title="1996 en jeu vidéo">1996</a></td>
+                        <td><i><a href="/wiki/The_Terminator:_SkyNET" title="The Terminator: SkyNET">The
+                                    Terminator: SkyNET</a></i></td>
+                        <td><a href="/wiki/Jeu_d%27action" title="Jeu d'action">Action</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1996_en_jeu_vid%C3%A9o" title="1996 en jeu vidéo">1996</a></td>
+                        <td><i><a href="/wiki/The_Elder_Scrolls_II:_Daggerfall"
+                                    title="The Elder Scrolls II: Daggerfall">The Elder Scrolls II:
+                                    Daggerfall</a></i></td>
+                        <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
+                        <td><i><a href="/wiki/An_Elder_Scrolls_Legend:_Battlespire"
+                                    title="An Elder Scrolls Legend: Battlespire">An Elder Scrolls Legend:
+                                    Battlespire</a></i></td>
+                        <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a>, <a href="/wiki/Microsoft_Windows"
+                                title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
+                        <td><i>PBA Tour Bowling</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1997_en_jeu_vid%C3%A9o" title="1997 en jeu vidéo">1997</a></td>
+                        <td><i><a href="/w/index.php?title=XCar:_Experimental_Racing&amp;action=edit&amp;redlink=1"
+                                    class="new" title="XCar: Experimental Racing (page inexistante)">XCar:
+                                    Experimental Racing</a></i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1998_en_jeu_vid%C3%A9o" title="1998 en jeu vidéo">1998</a></td>
+                        <td><i><a href="/w/index.php?title=Burnout:_Championship_Drag_Racing&amp;action=edit&amp;redlink=1"
+                                    class="new" title="Burnout: Championship Drag Racing (page inexistante)">Burnout:
+                                    Championship Drag Racing</a></i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
+                        </td>
+                        <td><a href="/wiki/DOS" title="DOS">DOS</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1998_en_jeu_vid%C3%A9o" title="1998 en jeu vidéo">1998</a></td>
+                        <td><i><a href="/wiki/The_Elder_Scrolls_Adventures:_Redguard"
+                                    title="The Elder Scrolls Adventures: Redguard">The Elder Scrolls
+                                    Adventures:
+                                    Redguard</a></i></td>
+                        <td><a href="/wiki/Action-RPG" title="Action-RPG">Action-RPG</a></td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1999_en_jeu_vid%C3%A9o" title="1999 en jeu vidéo">1999</a></td>
+                        <td><i>NIRA Intense Import Drag Racing</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
+                        </td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/1999_en_jeu_vid%C3%A9o" title="1999 en jeu vidéo">1999</a></td>
+                        <td><i>Skip Barber Racing</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
+                        </td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/2000_en_jeu_vid%C3%A9o" title="2000 en jeu vidéo">2000</a></td>
+                        <td><i>IHRA Drag Racing</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_course" title="Jeu vidéo de course">Course</a>
+                        </td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a>, <a
+                                href="/wiki/PlayStation" title="PlayStation">PlayStation</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><a href="/wiki/2000_en_jeu_vid%C3%A9o" title="2000 en jeu vidéo">2000</a></td>
+                        <td><i>PBA Tour Bowling 2</i></td>
+                        <td><a href="/wiki/Jeu_vid%C3%A9o_de_sport" title="Jeu vidéo de sport">Sport</a>
+                        </td>
+                        <td><a href="/wiki/Microsoft_Windows" title="Microsoft Windows">Windows</a></td>
+                        <td>Bethesda Softworks
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+    <footer>
+        <div>
+            &copy; - DAWAN - 2024
+        </div>
+    </footer>
+</body>
+
+</html>
